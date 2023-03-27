@@ -1,19 +1,28 @@
 import random
 import time
 
+
 def math():
-    numero = random.randint(100,1000)
+    #Declaring variables 
+    number = random.randint(1,100)
+    result = [0,0,0]
+    print(number)
 
-    print(numero)
-
-    while numero > 0:
-        if numero % 2 == 0:
-            numero = numero /2
+    #Creating a while loop with the condition that once the pattern is achive it closes the loop. 
+    while result != [1,2,4]:
+        #Ading the condition that if is a par is divided by two 
+        if number % 2 == 0:
+            number = number /2
+        #If is not a par is multiply by 3 and add 1 
         else:
-            numero = (3 * numero) + 1
-
+            number = (3 * number) + 1
+        #Inserted into the first element of the array
+        result.insert(0,number)
+        #Pop out the last element 
+        result.pop()
         time.sleep(2)
-        print(numero)
+        #print the number
+        print(number)
 
 if __name__ == "__main__":
     math()
